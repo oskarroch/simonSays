@@ -6,6 +6,10 @@ $(".btn").on("click", function () {
   const userChosenColor = $(this).attr("id");
   userClickedPattern.push(userChosenColor);
   playSound(userChosenColor);
+  $(this).addClass("pressed");
+  setTimeout(() => {
+    $(this).removeClass("pressed");
+  }, 100);
 });
 
 function nextSequence() {
